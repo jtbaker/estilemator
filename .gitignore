@@ -1,2 +1,3 @@
-TILE_MODEL_TEST/
-.pytest.cache
+TEST_TILE_WRITE/
+**.pyc
+**.cache
