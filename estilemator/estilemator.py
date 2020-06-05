@@ -84,7 +84,7 @@ class TileFactory(object):
             tuple(get_prediction_matrix(tile) for tile in self.tiles)
         ).reshape(self.TILE_PREDICTION_SHAPE)
         predictions: np.ndarray = None
-        if n_jobs > 1:
+        if n_jobs != 1:
             with Parallel(n_jobs=n_jobs, backend="multiprocessing", temp_folder="./temp") as parallel:
                 delay = delayed(self.estimator.predict)
                 n = len(X)
