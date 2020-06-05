@@ -85,7 +85,7 @@ class TileFactory(object):
         ).reshape(self.TILE_PREDICTION_SHAPE)
         predictions: np.ndarray = None
         if n_jobs > 1:
-            with Parallel(n_jobs=n_jobs, backend="multiprocessing") as parallel:
+            with Parallel(n_jobs=n_jobs, backend="multiprocessing", temp_folder="./temp") as parallel:
                 delay = delayed(self.estimator.predict)
                 n = len(X)
                 starts = [int(n / n_jobs * i) for i in range(n_jobs)]
