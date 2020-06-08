@@ -10,7 +10,6 @@ from joblib import Parallel
 from joblib import delayed
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from sklearn.neighbors.regression import NeighborsBase
 from rasterio import mask
 import json
 
@@ -50,14 +49,14 @@ class TileFactory(object):
 
     tiles: Tuple[mercantile.Tile]
     bbox: mercantile.Bbox
-    estimator: NeighborsBase
+    estimator
     zoom_levels: Union[List[int], Tuple[int]]
     transfomers: Tuple[Affine]
     tile_dimension: int
 
     def __init__(
         self,
-        estimator: NeighborsBase,
+        estimator,
         bbox: mercantile.Bbox,
         zoom_levels: Union[List[int], Tuple[int]],
         tile_dimension: int = 256,
