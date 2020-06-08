@@ -3,7 +3,7 @@ from joblib import delayed
 import os
 import numpy as np
 import mercantile
-from typing import Callable, Dict, List, Tuple, Union
+from typing import Callable, Dict, List, Tuple, Union, Any
 from affine import Affine
 from rasterio.mask import geometry_mask, mask
 from joblib import Parallel
@@ -49,7 +49,7 @@ class TileFactory(object):
 
     tiles: Tuple[mercantile.Tile]
     bbox: mercantile.Bbox
-    estimator
+    estimator: Any
     zoom_levels: Union[List[int], Tuple[int]]
     transfomers: Tuple[Affine]
     tile_dimension: int
