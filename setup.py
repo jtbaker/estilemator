@@ -5,7 +5,7 @@ import sys
 from setuptools import setup
 
 setup(
-    name='Estilemator',
+    name='estilemator',
     version='0.1.0',
     author='Jason Baker',
     author_email='jason.th.baker@gmail.com',
