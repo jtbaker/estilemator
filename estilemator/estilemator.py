@@ -113,7 +113,7 @@ class TileFactory(object):
         bad_value={"color": "k", "alpha": 0},
         metadata: Dict = None,
         transform: Callable = None,
-        backend="multiprocessing"
+        backend="multiprocessing",
         **kwargs,
     ):
         if min_threshold is not None:
